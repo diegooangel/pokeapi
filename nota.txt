@@ -1,0 +1,15 @@
+Aplicacion de busqueda de pokemon:
+* Descripcion: Crear una interfaz donde los usuarios puedan buscar informacion sobre cualquier pokemon usando el nombre (por ejemplo numero de la pokedex, habilidades, tipo y evoluciones).
+* Funcionalidades adicionales:
+    * Mostrar imagen del pokemon.
+    * Listar evoluciones.
+
+
+imagen del pokemon: sprites.back_default
+
+
+Elige tus 5 pokemones:
+y para pokemon se cree un div para poder ponerle estilo mas facil y acomodarlos.
+cuando llegue a 5 pokemones no deje que busque otro, salga una alerta diciendo solo puedes elegir 
+5 pokemones. 
+despues mejorarlo y que deje borrar uno para poder buscar otro.

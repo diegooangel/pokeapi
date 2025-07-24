@@ -1,0 +1,9 @@
+.modo-oscuro {
+    background-color: black;
+    color: bisque;
+}
+
+.modo-claro {
+    background-color: azure;
+    color: cornflowerblue;
+}
