@@ -7,3 +7,29 @@
     background-color: azure;
     color: cornflowerblue;
 }
+
+
+ul.lista-pokemon {
+    list-style: none; /* Quitar los puntos */
+    padding: 0;
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+ul.lista-pokemon li {
+    background-color: #f1f1f1;
+    margin-bottom: 10px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 16px;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+ul.lista-pokemon li:hover {
+    background-color: #ffe66d;
+    transform: scale(1.02);
+}

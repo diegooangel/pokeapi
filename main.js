@@ -9,13 +9,14 @@ modoOscuro.addEventListener('click', () => {
     }
 });
 
+//--------------------------------------------------------------------------------------------------------------------------------------------------------
+
 async function obtenerPokemon (pokemon) {
     try {
         const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
         const data = await res.json();
         console.log(data.name);
         mostrarPokemon(data);
-        mostrarEvoluciones();
     } catch (error) {
         console.error(error, 'no se pudo encontrar al pokemon' + pokemon);
     }
@@ -31,6 +32,19 @@ const ul = document.getElementById('ul');
 // Capturamos el evento del boton buscar con el click
 buscar.addEventListener('click', () => {
     console.log(`Lo que busco fue: ${input.value}`);
-    
+    obtenerPokemon(input.value);
+
     input.value = "";
 });
+
+function mostrarPokemon(e) {
+    const li = document.createElement('li');
+    const p = document.createElement('p');
+    const img = document.createElement('img');
+    p.innerText = e.name;
+    img.src = e.sprites.front_default;
+
+    li.appendChild(p);
+    li.appendChild(img);
+    ul.appendChild(li);
+}
