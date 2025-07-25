@@ -9,16 +9,6 @@ modoOscuro.addEventListener('click', () => {
     }
 });
 
-const input = document.getElementById('input');
-const buscar = document.getElementById('buscar');
-const div = document.getElementById('div');
-const p = document.getElementById('p');
-buscar.addEventListener('click', () => {
-    const pokemon = input.value;
-    console.log(pokemon);
-    obtenerPokemon(pokemon);
-});
-
 async function obtenerPokemon (pokemon) {
     try {
         const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
@@ -30,27 +20,17 @@ async function obtenerPokemon (pokemon) {
         console.error(error, 'no se pudo encontrar al pokemon' + pokemon);
     }
 }
-// Funcion para insertar en html la imagen y el nombre del pokemon.
-const mostrarPokemon = (e) => {
-    const img = document.createElement('img');
-    p.textContent = e.name;
-    img.src = e.sprites.front_default;
-
-    div.appendChild(img);
-}
-
-// Funcion para mostrar las evoluciones.
-const mostrarEvoluciones = (e) => {
-    const boton = document.createElement('button');
-    boton.innerText = "ver evoluciones ..."
-    div.appendChild(boton);
-
-    boton.addEventListener("click", (e) => {
-        const parrafo = document.createElement('p');
-        div.appendChild(parrafo);
-        parrafo.innerHTML = `La evolucion del pokemon es: ${e.name}`
-    });
-
-}
 
 
+// Declaramos las variables:
+const buscar = document.getElementById('buscar');
+const input = document.getElementById('input');
+const div = document.getElementById('div');
+const ul = document.getElementById('ul');
+
+// Capturamos el evento del boton buscar con el click
+buscar.addEventListener('click', () => {
+    console.log(`Lo que busco fue: ${input.value}`);
+    
+    input.value = "";
+});
